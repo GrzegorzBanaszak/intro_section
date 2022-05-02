@@ -5,12 +5,13 @@
 }
 
 .nav-toggle {
-    z-index: 2;
+    z-index: 3;
     cursor: pointer;
 }
 
 .nav-overlay {
     position: absolute;
+    z-index: 1;
     top: 0;
     right: 0;
     height: 100%;
@@ -21,20 +22,13 @@
 .nav-menu {
     position: absolute;
     top: 0;
+    right: 0;
+    z-index: 2;
     width: 60%;
     background-color: white;
     height: 100%;
     padding: 5rem 1rem;
     transition: transform ease-in-out 0.3s;
-}
-
-.menu-close {
-    right: -100%;
-}
-
-.menu-open {
-    right: 0;
-
 }
 
 .nav-list {
@@ -85,4 +79,56 @@
 .nav-btn:hover {
     border: 2px solid hsl(0, 0%, 41%);
     border-radius: 20px;
+}
+
+@media screen and (min-width:1440px) {
+    nav {
+        display: flex;
+        align-items: center;
+        margin: 0 1rem;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-overlay {
+        display: none;
+    }
+
+    .nav-menu {
+        position: relative;
+        display: flex;
+        padding: 0;
+        justify-content: space-between;
+        width: 100%;
+        background-color: hsl(0, 0%, 98%);
+    }
+
+    .nav-list {
+        margin-left: 3rem;
+        display: flex;
+        gap: 6rem;
+    }
+
+    .nav-btns {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .nav-element {
+        position: relative;
+    }
+
+    .element-submenu {
+        position: absolute;
+        left: -30px;
+        top: 50px;
+        padding: 1.2rem;
+        margin: 0;
+        min-width: 180px;
+        border-radius: 10px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
 }

@@ -10,10 +10,29 @@ import calendar from "../images/icon-calendar.svg";
 import planning from "../images/icon-planning.svg";
 import reminders from "../images/icon-reminders.svg";
 import { useState } from "react";
+import { useEffect } from "react";
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [features, setFeatures] = useState(false);
   const [company, setComapny] = useState(false);
+
+  const checkWidth = () => {
+    if (window.innerWidth > 1440) {
+      setIsMenuOpen(true);
+      setFeatures(false);
+      setComapny(false);
+    } else {
+      setIsMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", checkWidth);
+
+    return () => {
+      window.removeEventListener("resize", checkWidth);
+    };
+  }, []);
 
   return (
     <nav>
@@ -26,66 +45,70 @@ const Nav = () => {
           onClick={() => setIsMenuOpen((prev) => !prev)}
         />
       </div>
-      {isMenuOpen && <div className="nav-overlay"></div>}
-      <div
-        className={isMenuOpen ? "nav-menu menu-open" : "nav-menu menu-close"}
-      >
-        <ul className="nav-list">
-          <li className="nav-element">
-            <p
-              className="element-header"
-              onClick={() => setFeatures((prev) => !prev)}
-            >
-              Features <img src={features ? arrowUp : arrowDown} alt="arrow" />
-            </p>
-            {features && (
-              <ul className="element-submenu">
-                <li className="submenu-element">
-                  <img src={todo} alt="todo" />
-                  Todo List
-                </li>
-                <li className="submenu-element">
-                  <img src={calendar} alt="calendar" />
-                  Calendar
-                </li>
-                <li className="submenu-element">
-                  <img src={reminders} alt="calendar" />
-                  Reminders
-                </li>
-                <li className="submenu-element">
-                  <img src={planning} alt="calendar" />
-                  Planning
-                </li>
-              </ul>
-            )}
-          </li>
-          <li className="nav-element">
-            <p
-              className="element-header"
-              onClick={() => setComapny((prev) => !prev)}
-            >
-              Company <img src={company ? arrowUp : arrowDown} alt="arrow" />
-            </p>
-            {company && (
-              <ul className="element-submenu">
-                <li className="submenu-element">History</li>
-                <li className="submenu-element">Our Team</li>
-                <li className="submenu-element">Blog</li>
-              </ul>
-            )}
-          </li>
-          <li className="nav-element">Careers</li>
-          <li className="nav-element">About</li>
-        </ul>
-        <div className="nav-btns">
-          <a className="nav-btn" href="/login">
-            Login
-          </a>
-          <a className="nav-btn" href="/register">
-            Register
-          </a>
-        </div>
-      </div>
+      {isMenuOpen && (
+        <>
+          <div className="nav-overlay"></div>
+          <div className="nav-menu">
+            <ul className="nav-list">
+              <li className="nav-element">
+                <p
+                  className="element-header"
+                  onClick={() => setFeatures((prev) => !prev)}
+                >
+                  Features{" "}
+                  <img src={features ? arrowUp : arrowDown} alt="arrow" />
+                </p>
+                {features && (
+                  <ul className="element-submenu">
+                    <li className="submenu-element">
+                      <img src={todo} alt="todo" />
+                      Todo List
+                    </li>
+                    <li className="submenu-element">
+                      <img src={calendar} alt="calendar" />
+                      Calendar
+                    </li>
+                    <li className="submenu-element">
+                      <img src={reminders} alt="calendar" />
+                      Reminders
+                    </li>
+                    <li className="submenu-element">
+                      <img src={planning} alt="calendar" />
+                      Planning
+                    </li>
+                  </ul>
+                )}
+              </li>
+              <li className="nav-element">
+                <p
+                  className="element-header"
+                  onClick={() => setComapny((prev) => !prev)}
+                >
+                  Company{" "}
+                  <img src={company ? arrowUp : arrowDown} alt="arrow" />
+                </p>
+                {company && (
+                  <ul className="element-submenu">
+                    <li className="submenu-element">History</li>
+                    <li className="submenu-element">Our Team</li>
+                    <li className="submenu-element">Blog</li>
+                  </ul>
+                )}
+              </li>
+              <li className="nav-element">Careers</li>
+              <li className="nav-element">About</li>
+            </ul>
+            <div className="nav-btns">
+              <a className="nav-btn" href="/login">
+                Login
+              </a>
+              <a className="nav-btn" href="/register">
+                Register
+              </a>
+            </div>
+          </div>
+        </>
+      )}
     </nav>
   );
 };
