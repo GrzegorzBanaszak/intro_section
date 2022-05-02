@@ -94,10 +94,11 @@
 
     .nav-overlay {
         display: none;
+        z-index: 0;
     }
 
     .nav-menu {
-        position: relative;
+        position: static;
         display: flex;
         padding: 0;
         justify-content: space-between;
@@ -106,6 +107,7 @@
     }
 
     .nav-list {
+
         margin-left: 3rem;
         display: flex;
         gap: 6rem;
@@ -117,13 +119,15 @@
     }
 
     .nav-element {
+        z-index: 2;
         position: relative;
     }
 
     .element-submenu {
         position: absolute;
+        z-index: 2;
         left: -30px;
-        top: 50px;
+        top: 30px;
         padding: 1.2rem;
         margin: 0;
         min-width: 180px;

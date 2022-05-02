@@ -23,29 +23,35 @@ const Intro = () => {
   }, []);
   return (
     <section className="intro">
-      <img className="intro-banner" src={imageMobile} alt="" />
-      <h1 className="intro-header">Make remote work</h1>
-      <p className="intro-desctiption">
-        Get your team in sync, no matter yor location. Streamline processes,
-        create team rituals, and watch productivity soar.
-      </p>
-      <a className="intro-btn" href="/more">
-        Learn more
-      </a>
-      <ul className="intro-list">
-        <li className="intro-company">
-          <img src={databiz} alt="databiz" />
-        </li>
-        <li className="intro-company">
-          <img src={audiophile} alt="audiophile" />
-        </li>
-        <li className="intro-company">
-          <img src={meet} alt="meet" />
-        </li>
-        <li className="intro-company">
-          <img src={maker} alt="maker" />
-        </li>
-      </ul>
+      <img
+        className="intro-banner"
+        src={windowWidth > 1440 ? imagesDesktop : imageMobile}
+        alt=""
+      />
+      <article className="intro-text">
+        <h4 className="intro-header">Make remote work</h4>
+        <p className="intro-desctiption">
+          Get your team in sync, no matter yor location. Streamline processes,
+          create team rituals, and watch productivity soar.
+        </p>
+        <a className="intro-btn" href="/more">
+          Learn more
+        </a>
+        <ul className="intro-list">
+          <li className="intro-company">
+            <img src={databiz} alt="databiz" />
+          </li>
+          <li className="intro-company">
+            <img src={audiophile} alt="audiophile" />
+          </li>
+          <li className="intro-company">
+            <img src={meet} alt="meet" />
+          </li>
+          <li className="intro-company">
+            <img src={maker} alt="maker" />
+          </li>
+        </ul>
+      </article>
     </section>
   );
 };

@@ -1,6 +1,5 @@
 .intro {
     margin-top: 1rem;
-    position: relative;
 }
 
 .intro-banner {
@@ -31,6 +30,14 @@
     border-radius: 15px;
     background-color: hsl(0, 0%, 8%);
     color: hsl(0, 0%, 98%);
+    border: 0.2rem solid hsl(0, 0%, 8%);
+    transition: all ease-in 0.2s;
+}
+
+.intro-btn:hover {
+    color: hsl(0, 0%, 8%);
+    background-color: hsl(0, 0%, 98%);
+
 }
 
 .intro-list {
@@ -42,4 +49,44 @@
 
 .intro-company img {
     height: 1.2rem;
+}
+
+@media screen and (min-width:1440px) {
+    .intro {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+        margin-top: 5.5rem;
+    }
+
+    .intro-text {
+        margin-right: 2rem;
+        width: 30%;
+        margin-top: 6rem;
+    }
+
+    .intro-banner {
+        width: 500px;
+    }
+
+    .intro-header {
+        font-size: 5rem;
+        text-align: left;
+    }
+
+    .intro-desctiption {
+        text-align: left;
+        padding: 0;
+        margin-top: 2rem;
+    }
+
+    .intro-btn {
+        margin: 3rem 0;
+    }
+
+    .intro-list {
+        margin-top: 12rem;
+        justify-content: space-between;
+
+    }
 }
