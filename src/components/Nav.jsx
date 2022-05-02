@@ -102,7 +102,7 @@ const Nav = () => {
               <a className="nav-btn" href="/login">
                 Login
               </a>
-              <a className="nav-btn" href="/register">
+              <a className="nav-btn btn-border" href="/register">
                 Register
               </a>
             </div>

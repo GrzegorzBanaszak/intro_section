@@ -38,6 +38,12 @@
 .nav-element {
     color: hsl(0, 0%, 41%);
     margin: 1.2rem 0;
+    cursor: pointer;
+    transition: color ease-in-out 0.3s;
+}
+
+.nav-element:hover {
+    color: hsl(0, 0%, 8%);
 }
 
 .element-header {
@@ -54,8 +60,14 @@
     padding-left: 1rem;
 }
 
+
 .submenu-element {
     margin: 1rem 0;
+    color: hsl(0, 0%, 41%);
+}
+
+.submenu-element:hover {
+    transition: color ease-in 0.2s;
 }
 
 .submenu-element img {
@@ -73,10 +85,16 @@
     padding: 0.8rem;
     color: hsl(0, 0%, 41%);
     text-align: center;
+    transition: color ease-in 0.2s;
+
 }
 
 
 .nav-btn:hover {
+    color: hsl(0, 0%, 8%);
+}
+
+.btn-border {
     border: 2px solid hsl(0, 0%, 41%);
     border-radius: 20px;
 }
