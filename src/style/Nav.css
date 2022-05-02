@@ -1,0 +1,88 @@
+.nav-logo {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 0.7rem;
+}
+
+.nav-toggle {
+    z-index: 2;
+    cursor: pointer;
+}
+
+.nav-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.nav-menu {
+    position: absolute;
+    top: 0;
+    width: 60%;
+    background-color: white;
+    height: 100%;
+    padding: 5rem 1rem;
+    transition: transform ease-in-out 0.3s;
+}
+
+.menu-close {
+    right: -100%;
+}
+
+.menu-open {
+    right: 0;
+
+}
+
+.nav-list {
+    list-style-type: none;
+}
+
+.nav-element {
+    color: hsl(0, 0%, 41%);
+    margin: 1.2rem 0;
+}
+
+.element-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.element-submenu {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    list-style-type: none;
+    padding-left: 1rem;
+}
+
+.submenu-element {
+    margin: 1rem 0;
+}
+
+.submenu-element img {
+    margin-right: 0.7rem;
+}
+
+.nav-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.nav-btn {
+    font-size: 1rem;
+    padding: 0.8rem;
+    color: hsl(0, 0%, 41%);
+    text-align: center;
+}
+
+
+.nav-btn:hover {
+    border: 2px solid hsl(0, 0%, 41%);
+    border-radius: 20px;
+}
